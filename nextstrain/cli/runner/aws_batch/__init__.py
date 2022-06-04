@@ -172,7 +172,7 @@ def run(opts, argv, working_volume = None, extra_env = {}, cpus: int = None, mem
     # Setup signal handler for Ctrl-Z.  Only Unix systems support SIGTSTP, so
     # we guard this non-essential feature.
     try:
-        SIGTSTP = signal.SIGTSTP
+        SIGTSTP = signal.SIGTSTP # type: ignore
     except AttributeError:
         SIGTSTP = None # type: ignore
     else:
