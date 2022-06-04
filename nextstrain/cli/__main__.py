@@ -12,7 +12,7 @@ def main():
     for stdio in (stdin, stdout, stderr):
         if stdio.encoding != "UTF-8":
             try:
-                stdio.reconfigure(encoding = "UTF-8")
+                stdio.reconfigure(encoding = "UTF-8") # type: ignore
             except AttributeError:
                 # reconfigure() is Python 3.7+
                 pass
